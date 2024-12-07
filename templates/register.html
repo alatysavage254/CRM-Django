@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container bg-light shadow-md p-5 form-layout">
+    <h3>Create your account</h3>
+    <h3>Start managing your clients today! </h3>
+</div>
+
+<hr>
+<br>
+
+<form method="post" autocomplete="off">
+    
+    {% csrf_token %}
+    
+    {{ form.username|as_crispy_field }}
+
+    <br>
+    
+    {{ form.password1|as_crispy_field }}
+
+    <br>
+    
+    {{ form.password2|as_crispy_field }}
+    
+    <button type="submit" class="btn btn-primary w-100 btn-block ">Create account</button>
+    
+    
+    
+</form>
+
+<br>
+
+<div class="text-center">
+    <p>Already have an account</p> <a href="{% url 'my-login' %}">Login</a>
+</div>
+
+<br>
+
+</body>
+</html>
+{% endblock %}
