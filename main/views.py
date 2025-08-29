@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CreateUserForm, LoginForm, CreateRecordForm, UpdateRecordForm
 
-from django.contrib.auth.models import auth
+from django.contrib import auth
 from django.contrib.auth import authenticate
 
 from django.contrib.auth.decorators import login_required
